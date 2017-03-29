@@ -1,0 +1,12 @@
+E:\ULBRA\2017-1\Computação Gráfica\Trabalho\bin\Debug\Trabalho.exe
+E:\ULBRA\2017-1\Computação Gráfica\Trabalho\bin\Debug\Trabalho.pdb
+E:\ULBRA\2017-1\Computação Gráfica\Trabalho\obj\Debug\Trabalho.csprojResolveAssemblyReference.cache
+E:\ULBRA\2017-1\Computação Gráfica\Trabalho\obj\Debug\Trabalho.Form1.resources
+E:\ULBRA\2017-1\Computação Gráfica\Trabalho\obj\Debug\Trabalho.Properties.Resources.resources
+E:\ULBRA\2017-1\Computação Gráfica\Trabalho\obj\Debug\Trabalho.csproj.GenerateResource.Cache
+E:\ULBRA\2017-1\Computação Gráfica\Trabalho\obj\Debug\Trabalho.exe
+E:\ULBRA\2017-1\Computação Gráfica\Trabalho\obj\Debug\Trabalho.pdb
+E:\ULBRA\2017-1\Computação Gráfica\Trabalho\bin\Debug\Trabalho.exe.config
+E:\ULBRA\2017-1\Computação Gráfica\Processamento-de-Imagem---C-\Trabalho\bin\Debug\Trabalho.exe.config
+E:\ULBRA\2017-1\Computação Gráfica\Processamento-de-Imagem---C-\Trabalho\obj\Debug\Trabalho.exe
+E:\ULBRA\2017-1\Computação Gráfica\Processamento-de-Imagem---C-\Trabalho\obj\Debug\Trabalho.pdb
