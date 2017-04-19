@@ -5,7 +5,7 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trabalho", "Trabalho.csproj", "{613F2416-3AD9-4B77-BEE1-84E71EC8573C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageProcessing", "..\ImageProcessing\ImageProcessing-source-code\ImageProcessing\ImageProcessing.csproj", "{FBB32F70-4B10-4C70-84B8-4EE2364F8B71}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Projeto-Prova-G1", "..\..\Prova G1\Projeto-Prova-G1\Projeto-Prova-G1.csproj", "{A94FCC1C-CD2C-460E-A051-3232C8550CB0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{613F2416-3AD9-4B77-BEE1-84E71EC8573C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{613F2416-3AD9-4B77-BEE1-84E71EC8573C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{613F2416-3AD9-4B77-BEE1-84E71EC8573C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FBB32F70-4B10-4C70-84B8-4EE2364F8B71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FBB32F70-4B10-4C70-84B8-4EE2364F8B71}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FBB32F70-4B10-4C70-84B8-4EE2364F8B71}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FBB32F70-4B10-4C70-84B8-4EE2364F8B71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A94FCC1C-CD2C-460E-A051-3232C8550CB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A94FCC1C-CD2C-460E-A051-3232C8550CB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A94FCC1C-CD2C-460E-A051-3232C8550CB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A94FCC1C-CD2C-460E-A051-3232C8550CB0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

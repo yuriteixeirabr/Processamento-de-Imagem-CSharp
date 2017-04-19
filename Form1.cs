@@ -22,8 +22,25 @@ namespace Trabalho
         {
             Bitmap image = (Bitmap)ptbImage.Image;
             Bitmap image2 = (Bitmap)ptbImage2.Image;
-            ptbTransformedImage.Image = or(image, image2);
-            initializeHistogram((Bitmap)ptbImage.Image);
+
+            if (cmbOpcoes.Text.Equals("Negativo"))
+                ptbTransformedImage.Image = negativeImage(image);
+            else if (cmbOpcoes.Text.Equals("Threshold"))
+                ptbTransformedImage.Image = thresholdImage(image, 150);
+            else if (cmbOpcoes.Text.Equals("AND"))
+                ptbTransformedImage.Image = and(image, image2);
+            else if (cmbOpcoes.Text.Equals("OR"))
+                ptbTransformedImage.Image = or(image, image2);
+            else if (cmbOpcoes.Text.Equals("Soma"))
+                ptbTransformedImage.Image = add(image, image2);
+            else if (cmbOpcoes.Text.Equals("Subtração"))
+                ptbTransformedImage.Image = subtract(image, image2);
+            else if (cmbOpcoes.Text.Equals("Multiplicação"))
+                ptbTransformedImage.Image = multiplication(image, image2);
+            else if (cmbOpcoes.Text.Equals("Divisão"))
+                ptbTransformedImage.Image = division(image, image2);
+
+            initializeAccumulatedHistogram((Bitmap)ptbTransformedImage.Image);
         }
 
         private Bitmap negativeImage(Bitmap image)
@@ -362,10 +379,19 @@ namespace Trabalho
         }
 
         int[,] histoAcumulado;
-        private void initializeHistogram(Bitmap image)
+        private void initializeAccumulatedHistogram(Bitmap image)
         {
             histoAcumulado = histogramaAcumulado(image);
-            //Ejecutamos el botón del histograma rojo
+
+            histogramRed();
+            histogramGreen();
+            histogramBlue();
+        }
+
+        private void initializeNormalizedHistogram(Bitmap image)
+        {
+            histoAcumulado = normalizedHistogram(image);
+
             histogramRed();
             histogramGreen();
             histogramBlue();
@@ -373,22 +399,21 @@ namespace Trabalho
 
         public int[,] histogramaAcumulado(Bitmap bmp)
         {
-            
+
             byte Red = 0;
             byte Green = 0;
             byte Blue = 0;
-            
+
             int[,] matrizAcumulada = new int[3, 256];
-            
+
             for (int i = 0; i <= bmp.Width - 1; i++)
             {
                 for (int j = 0; j <= bmp.Height - 1; j++)
                 {
                     Red = bmp.GetPixel(i, j).R;
-                    
                     Green = bmp.GetPixel(i, j).G;
                     Blue = bmp.GetPixel(i, j).B;
-                    
+
                     matrizAcumulada[0, Red] += 1;
                     matrizAcumulada[1, Green] += 1;
                     matrizAcumulada[2, Blue] += 1;
@@ -400,7 +425,7 @@ namespace Trabalho
         public void histogramRed()
         {
             chart1.Series["Histogram R"].Points.Clear();
-            
+
             chart1.Series["Histogram R"].Color = Color.Red;
             for (int i = 0; i <= 255; i++)
             {
@@ -426,6 +451,67 @@ namespace Trabalho
             {
                 chart3.Series["Histogram B"].Points.AddXY(i + 1, histoAcumulado[2, i]);
             }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            using (OpenFileDialog dlg = new OpenFileDialog())
+            {
+                dlg.Title = "Escolher Imagem 1";
+                dlg.Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif; *.png";
+
+                if (dlg.ShowDialog() == DialogResult.OK)
+                {
+                    // Create a new Bitmap object from the picture file on disk,
+                    // and assign that to the PictureBox.Image property
+                    ptbImage.Image = new Bitmap(dlg.FileName);
+                }
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog dlg = new OpenFileDialog())
+            {
+                dlg.Title = "Escolher Imagem 2";
+                dlg.Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif; *.png";
+
+                if (dlg.ShowDialog() == DialogResult.OK)
+                {
+                    // Create a new Bitmap object from the picture file on disk,
+                    // and assign that to the PictureBox.Image property
+                    ptbImage2.Image = new Bitmap(dlg.FileName);
+                }
+            }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private int[,] normalizedHistogram(Bitmap image)
+        {
+            byte Red = 0;
+            byte Green = 0;
+            byte Blue = 0;
+
+            int[,] matrizAcumulada = new int[3, 256];
+
+            for (int i = 0; i <= image.Width - 1; i++)
+            {
+                for (int j = 0; j <= image.Height - 1; j++)
+                {
+                    Red += image.GetPixel(i, j).R;
+                    Green = image.GetPixel(i, j).G;
+                    Blue = image.GetPixel(i, j).B;
+
+                    matrizAcumulada[0, Red] += 1;
+                    matrizAcumulada[1, Green] += 1;
+                    matrizAcumulada[2, Blue] += 1;
+                }
+            }
+            return matrizAcumulada;
         }
     }
 }

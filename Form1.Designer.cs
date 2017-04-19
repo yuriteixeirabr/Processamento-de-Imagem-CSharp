@@ -42,12 +42,14 @@
             this.ptbImage = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.ptbTransformedImage = new System.Windows.Forms.PictureBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbOpcoes = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.ptbImage2 = new System.Windows.Forms.PictureBox();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chart3 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbImage)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -63,7 +65,7 @@
             // 
             this.btnToTransform.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnToTransform.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnToTransform.Location = new System.Drawing.Point(5, 263);
+            this.btnToTransform.Location = new System.Drawing.Point(5, 308);
             this.btnToTransform.Name = "btnToTransform";
             this.btnToTransform.Size = new System.Drawing.Size(182, 31);
             this.btnToTransform.TabIndex = 1;
@@ -110,15 +112,22 @@
             this.ptbTransformedImage.TabIndex = 0;
             this.ptbTransformedImage.TabStop = false;
             // 
-            // comboBox1
+            // cmbOpcoes
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Negativ Image"});
-            this.comboBox1.Location = new System.Drawing.Point(5, 228);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(182, 21);
-            this.comboBox1.TabIndex = 4;
+            this.cmbOpcoes.FormattingEnabled = true;
+            this.cmbOpcoes.Items.AddRange(new object[] {
+            "Negativo",
+            "Threshold",
+            "AND",
+            "OR",
+            "Soma",
+            "Subtração",
+            "Multiplicação",
+            "Divisão"});
+            this.cmbOpcoes.Location = new System.Drawing.Point(5, 273);
+            this.cmbOpcoes.Name = "cmbOpcoes";
+            this.cmbOpcoes.Size = new System.Drawing.Size(182, 21);
+            this.cmbOpcoes.TabIndex = 4;
             // 
             // groupBox3
             // 
@@ -188,17 +197,43 @@
             this.chart3.TabIndex = 8;
             this.chart3.Text = "Histogram B";
             // 
+            // button1
+            // 
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(5, 228);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(182, 31);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "BUSCAR IMAGEM";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // button2
+            // 
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(193, 228);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(182, 31);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "BUSCAR IMAGEM";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1188, 453);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.chart3);
             this.Controls.Add(this.chart2);
             this.Controls.Add(this.chart1);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmbOpcoes);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnToTransform);
@@ -206,6 +241,7 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Trabalho - Computação Gráfica";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ptbImage)).EndInit();
             this.groupBox2.ResumeLayout(false);
@@ -226,12 +262,14 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.PictureBox ptbTransformedImage;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbOpcoes;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.PictureBox ptbImage2;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart3;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
 
